@@ -49,6 +49,8 @@ Now, lets alter the table schema in mysql and evolve the column in HIVE.
 
 /******Failed scenario************/
 12. sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://localhost/custpayments --username root --password root -table customers -m 3 --split-by customernumber --target-dir /user/hduser/custavro --incremental lastmodified --check-column createddate --last-value '2020-10-17' --append --as-avrodatafile;
-
 Job abondoned, WARN: --incremental lastmodified cannot be used in conjunction with --as-avrodatafile.
+
+Sqoop currently do not support merge of avro files (which is required by the incremental import in lastmodified mode). There is already JIRA SQOOP-1094 to add such support.
+From <https://stackoverflow.com/questions/18609654/sqoop-incremental-import-lastmodified-howto-merge-avro> 
 /***********************************/

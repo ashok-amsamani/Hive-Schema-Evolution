@@ -10,4 +10,3 @@ Concepts Covered:
 4. Extracting avro schema using avro jar.
 5. AVRO hive table creation
 6. Sqoop Incremental append and hive schema expansion
-7. Dmapreduce.job.user.classpath.first

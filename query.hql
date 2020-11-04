@@ -4,7 +4,7 @@
 	source /home/hduser/custpayments_ORIG.sql
 
 4. Do sqoop import
-sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://localhost/custpayments --username root --password root -table customers -m 3 --split-by customernumber --target-dir /user/hduser/custavro --delete-target-dir --as-avrodatafile;
+sqoop import --connect jdbc:mysql://localhost/custpayments --username root --password root -table customers -m 3 --split-by customernumber --target-dir /user/hduser/custavro --delete-target-dir --as-avrodatafile;
 
 5.Download avro jar (avro-tools-1.8.1.jar) and copy to /home/hduser/ from the below url, this is to extract the schema from the avro data imported in the above step.
 
